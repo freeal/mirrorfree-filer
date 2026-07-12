@@ -5,24 +5,32 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mirrorfree-filer"
 version = "0.1.0"
-description = "Filer for dormant LLP accounts"
-requires-python = ">=3.13"
+description = "Python package for filing dormant LLP accounts for Mirror Free LLP"
+requires-python = ">=3.12"
 authors = [
     {name = "freeal"}
 ]
 license = {text = "MIT"}
-dependencies = [
-    "lxml",
-    "httpx",
-    "pydantic",
-    "keyring",
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "ruff",
 ]
+
+[project.scripts]
+mirrorfree-filer = "mirrorfree_filer.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/freeal/mirrorfree-filer"
 Repository = "https://github.com/freeal/mirrorfree-filer"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
