@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mirrorfree-filer"
+version = "0.1.0"
+description = "Filer for dormant LLP accounts"
+requires-python = ">=3.13"
+authors = [
+    {name = "freeal"}
+]
+license = {text = "MIT"}
+dependencies = [
+    "lxml",
+    "httpx",
+    "pydantic",
+    "keyring",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/freeal/mirrorfree-filer"
+Repository = "https://github.com/freeal/mirrorfree-filer"
